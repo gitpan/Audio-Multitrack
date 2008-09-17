@@ -1,0 +1,6 @@
+Multitrack.p:user-friendly YAML.
+Text_methods.pl:				$predicate !~ /^\s*$/ and $::parser->read($predicate);
+Text_methods.pl:				$predicate !~ /^\s*$/ and $::parser->read($predicate);
+Text_methods.pl:				$parser->command($_) 
+chain_operators:	If reverb is added and it is the first user-added effect, the offset will
+test-command-loop:		$parser->command($user_input) 

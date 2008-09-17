@@ -1,0 +1,20 @@
+Welcome to Nama help
+
+The help command can take several arguments.
+
+help <command>          - show help for <command>
+help <fragment>         - show help for all commands matching /<fragment>/
+help <topic_number>     - list commands under topic <topic_number>
+
+help is available for the following topics:
+
+1  Project
+2  Track
+3  Chain setup
+4  Transport
+5  Marks
+6  Effects
+7  Group control
+8  Mixdown
+9  Command line
+10 All

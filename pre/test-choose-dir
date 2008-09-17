@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use Tk;
+use Tk::DirTree;
+use strict;
+use warnings;
+
+my $mw = new MainWindow;
+$mw->title( 'Hello' );
+
+$mw->Label( -text => 'Hello World' )->pack;
+$mw->Button( -text => "Done", -command => sub { exit } )->pack;
+$mw->DirTree()->pack;
+
+MainLoop;

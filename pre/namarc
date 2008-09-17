@@ -1,0 +1,73 @@
+#
+#
+#         Configuration file for Audio::Multitrack
+
+#         Notes: 
+
+#         - This configuration file is distinct from
+#           Ecasound's configuration file .ecasoundrc . 
+#           In most instances the latter is not required.
+
+#        - The format of this file is YAMLish, preprocessed to allow
+#           comments.
+#
+#        - Indents are two spaces
+#
+#        - A value _must_ be supplied for each 'leaf' field
+#          such as 'mixer_out_device'
+#
+#        - A value must _not_ be supplied for nodes, i.e.
+#          'device', whose value is to be the entire indented
+#          data structure that follows.
+#
+#        - The special symbol '~' represents a null value
+#
+#        - Check the 'devices' and 'abbreviations' section at
+#          the end of this file to understand the values that
+#          appear below. 'consumer' for example, is defined as
+#          /dev/dsp.
+#
+
+project_root: ~ # null in default file
+
+mixer_out_device: consumer
+
+record_device: consumer
+
+# globals for our chain setups
+
+ecasound_globals: "-B auto -r -z:mixmode,sum -z:psr "
+
+# audio formats 
+
+mixer_out_format: cd-stereo
+mix_to_disk_format: cd-stereo
+raw_to_disk_format: cd-mono
+
+# audio devices 
+
+# indents _are_ significant in the lines below
+
+devices: 
+  jack: 
+    ecasound_id: jack_alsa
+    input_format: 32-12
+    output_format: 32-10
+  multi:
+    ecasound_id: alsa,ice1712
+    input_format: 32-12
+    output_format: 32-10
+  consumer:
+    ecasound_id: /dev/dsp
+    input_format: cd-stereo
+    output_format: cd-stereo
+
+# you may create arbitrary abbreviations
+
+abbreviations:  
+  24-mono: s24_le,1,frequency
+  32-10: s32_le,10,frequency
+  32-12: s32_le,12,frequency
+  cd-mono: s16_le,1,44100
+  cd-stereo: s16_le,2,44100,i
+  frequency: 44100
